@@ -1,21 +1,14 @@
 .subtotal {
-  margin-left: 50px;
-}
-
-.subtotal__head > img {
-  margin-bottom: 20px;
-}
-
-.subtotal__body {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   width: 300px;
   height: 100px;
   padding: 20px;
   background-color: #f3f3f3;
   border: 1px solid #ddd;
   border-radius: 3px;
+  margin-left: 50px;
+  justify-content: space-between;
 }
 
 .subtotal__gift {
@@ -27,7 +20,7 @@
   margin-right: 5px;
 }
 
-.subtotal__body > button {
+.subtotal > button {
   background-color: #f0c14b;
   border-radius: 2px;
   width: 100%;

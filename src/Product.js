@@ -3,26 +3,27 @@ import './Product.css';
 import StarIcon from '@material-ui/icons/Star';
 import { useStateValue } from './StateProvider';
 
-function Product({ title, image, price, rating }) {
-    const [state, dispatch] = useStateValue();
+function Product({ id, title, price, rating, image }) {
+    const [{ basket }, dispatch] = useStateValue();
 
     const addToBasket = () => {
-        //dispacth the itme into the data layer
+        //Dispacth the item into the data layer so that it can be used by any pages.
         dispatch({
             type: 'ADD_TO_BASKET',
-            itme: {
+            item: {
+                id: id,
                 title: title,
                 image: image,
                 price: price,
                 rating: rating,
-            },
-        });
+            }
+        })
     };
 
     return (
         <div className="product">
             <div className="product__info">
-                <p>{title} </p>
+                <p>{title}</p>
                 <p className="product__price">
                     <small>$</small>
                     <strong>{price}</strong>
@@ -38,9 +39,11 @@ function Product({ title, image, price, rating }) {
                 </div>
             </div>
             <img
-                src="https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY400_.jpg"
-                alt=""
+                className="product__image"
+                src={image}
+                alt="Product Image"
             />
+            <button onClick={addToBasket}>Add to Basket</button>
 
         </div>
     )
