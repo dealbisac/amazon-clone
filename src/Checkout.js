@@ -1,13 +1,11 @@
 import React from 'react'
 import { useStateValue } from './StateProvider'
-// import {useStateValue} from './StateProvider';
 import './Checkout.css';
 import CheckoutProduct from "./CheckoutProduct";
 import Subtotal from "./Subtotal";
 
 
 function Checkout() {
-
     const [{ basket }] = useStateValue();
 
 
@@ -22,8 +20,10 @@ function Checkout() {
                     <div>
                         <h2>Your shopping basket is empty</h2>
                         <p>
-                            You have no item in your basket . To buy one or more items, click "Add to Basket" next to items
-                </p>
+                            You have no item in your basket .
+                            To buy one or more items, click "Add to Basket"
+                            next to items
+                        </p>
                     </div>
                 ) : (
                         <div>
