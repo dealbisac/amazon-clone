@@ -6,7 +6,7 @@ import Subtotal from "./Subtotal";
 
 
 function Checkout() {
-    const [{ basket }] = useStateValue();
+    const [{ basket, user }, dispatch] = useStateValue();
 
 
     return (
@@ -18,6 +18,7 @@ function Checkout() {
                     alt="" />
                 {basket?.length === 0 ? (
                     <div>
+                        <h3> Hello, {user?.email}</h3>
                         <h2>Your shopping basket is empty</h2>
                         <p>
                             You have no item in your basket .
