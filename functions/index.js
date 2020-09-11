@@ -1,8 +1,7 @@
-const functions = require('firebase-functions');
+const functions = require("firebase-functions");
 const express = require("express");
 const cors = require("cors");
-const { request } = require('express');
-const stripe = require("stripe")('sk_test_51Go5riJeOw3gALJ4YVG5mMwFb3uMEDm3Kr5AWmLunKl6aoWp5OyctOdaGv5P34E9zywLbBZH4LlXsbiYxrOvWtUK009C62Ntgc');
+const stripe = require("stripe")("sk_test_51Go5riJeOw3gALJ4YVG5mMwFb3uMEDm3Kr5AWmLunKl6aoWp5OyctOdaGv5P34E9zywLbBZH4LlXsbiYxrOvWtUK009C62Ntgc");
 
 //API
 
@@ -22,7 +21,7 @@ app.post('/payments/create', async (request, response) => {
     console.log("Payment Request Received", total)
 
     const paymentIntent = await stripe.paymentIntents.create({
-        amount = total,  //subunits of the currency
+        amount: total,  //subunits of the currency
         currency: "usd",
     });
     //OK_created
@@ -30,6 +29,7 @@ app.post('/payments/create', async (request, response) => {
         clientSecret: paymentIntent.client_secret,
     });
 });
+
 //Listen Command
 exports.api = functions.https.onRequest(app);
 

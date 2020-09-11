@@ -23,15 +23,15 @@ function Orders() {
                 ))
         } else {
             setOrders([]);
-
-        }, [user]);
+        }
+    }, [user]);
 
     return (
         <div className="orders">
             <h1> Your Orders</h1>
 
             <div className="ordes__order">
-                {orders ? map(order => (
+                {orders?.map(order => (
                     <Order order={order} />
                 ))}
             </div>

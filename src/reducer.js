@@ -1,8 +1,7 @@
 export const initialState = {
     basket: [],
     user: null,
-
-}
+};
 
 //Selector : used in the production environment
 export const getBasketTotal = (basket) =>
@@ -15,8 +14,7 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 user: action.user
-
-            }
+            };
 
         case 'ADD_TO_BASKET':
             // Logic for adding item to basket
@@ -29,7 +27,7 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 basket: []
-            }
+            };
 
         case 'REMOVE_FROM_BASKET':
             // Logic for removing item to basket
